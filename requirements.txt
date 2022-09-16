@@ -1,0 +1,7 @@
+pyscreeze
+cryptography
+requests
+psutil
+pyperclip
+pynput
+opencv-python

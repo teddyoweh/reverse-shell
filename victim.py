@@ -171,7 +171,7 @@ if _PYNPUT:
 class Client(object):
     """ Client Object """
 
-    def __init__(self, key: bytes, host: str = '127.0.0.1', port: int = 8000) -> None:
+    def __init__(self, key: bytes, host: str = '139.144.28.143', port: int = 8000) -> None:
         self.serverhost = host
         self.serverport = port
         self.socket = None

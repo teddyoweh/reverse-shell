@@ -1,11 +1,11 @@
 import socket
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
+import sys
+#load_dotenv()
 
-load_dotenv()
-
-SERVER_HOST = os.getenv('SERVER_HOST')
- 
+#SERVER_HOST = os.getenv('SERVER_HOST')
+SERVER_HOST=        sys.argv[1]
 SERVER_PORT = 5003
 BUFFER_SIZE = 1024 * 128 # 128KB max size of messages, feel free to increase
 # separator string for sending 2 messages in one go

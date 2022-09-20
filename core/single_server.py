@@ -30,10 +30,28 @@ while True:
         # empty command
         continue
     # send the command to the client
-    client_socket.send(command.encode())
+    
     if command.lower() == "exit":
         # if the command is exit, just break out of the loop
         break
+    elif command.lower() == "clear":
+        
+        os.system('clear')
+        continue
+   
+    elif command.lower() == "help":
+        print("clear - clear the screen")
+        print("exit - exit the program")
+        print("help - show this help message")
+        print("show - show the current directory")
+        continue
+    
+    elif command.lower().startswith("transfer"):
+        filename = command.split()[1]
+        client_socket.send(command.encode())  
+    else:
+        client_socket.send(command.encode())  
+      
     # retrieve command results
     output = client_socket.recv(BUFFER_SIZE).decode()
     # split command output and current directory

